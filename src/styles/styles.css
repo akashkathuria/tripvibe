@@ -1,3 +1,36 @@
+:root {
+    --primary: #CFE7E5;
+    --secondary: #213638;
+    --tertiary: #E5A13E;
+  }
+
 .body-margin{
-    margin-top: 5rem;
+    margin-top: 4rem;
+}
+.carousel-layout{
+    margin: 1rem;
+}
+.destination-image{
+    width: 100%;
+}
+.about-summary-image{
+    width: 100%;
+}
+.slider-image{
+    cursor: pointer;
+}
+.slider-image:hover{
+    opacity: 75%;
+}
+@media screen and (min-width: 768px) {
+    .body-margin {
+        margin-top: 5rem;
+    }
+    .carousel-layout{
+        width: 30rem;
+    }
+    .crousel-grid{
+        display: flex;
+        justify-content: center;
+    }
 }

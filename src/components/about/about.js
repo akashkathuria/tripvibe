@@ -6,10 +6,9 @@ import { styled } from "@mui/material/styles";
 import { Typography } from "@mui/material";
 import ImageGallery from "../common/imageGallery";
 import { HEADLINES } from "../../constants/constant";
-import HomeSlider from "./HomeSlider";
-import AboutSummary from "../about/aboutSumarry";
-import HomePinnedCard from "./HomePinnedCard";
-import { HOME_DATA } from "./HomePageData";
+import HomeSlider from "../home/HomeSlider";
+import AboutSummary from "./aboutSumarry";
+import AboutDescription from "./aboutDescription";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -19,10 +18,10 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
-const HomePage = () => {
+const About = () => {
   return (
     <>
-      <Box
+      {/* <Box
         sx={{
           display: "flex",
           alignItems: "center",
@@ -51,47 +50,20 @@ const HomePage = () => {
         >
           {HEADLINES.BANNER_TEXT}
         </Typography>
-      </Box>
+      </Box> */}
       
       {/* <Slider /> */}
       <Box sx={{ flexGrow: 1, marginTop:"10px" }} >
         <Grid container spacing={2}>
-        <Grid item xs={12} md={4}>
-        <Box component="section" sx={{ margin: '0px 15px', boxShadow: "0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12)", height:"100%" }}>
-          <AboutSummary showReadmore />
-        </Box>
+        <Grid item xs={12} md={8}>
+        <AboutDescription />
         </Grid>
-        <Grid item xs={12} md={4} className="crousel-grid">
-            <Item>
-              <HomeSlider heading="Mauritius Gallery"/>
-            </Item>
-          </Grid>
         <Grid item xs={12} md={4}>
-        <Item>
-
-        <HomePinnedCard />
-        </Item>
-
+        <AboutSummary showReadmore={false}/>
         </Grid>
-          <Grid item xs={12} md={12}>
-            <Item>
-              <ImageGallery itemData = {HOME_DATA.postsList} />
-            </Item>
-          </Grid>
-          {/* <Grid item xs={12} md={3}>
-            <Item>
-              xs=6 md=4
-            </Item>
-          </Grid> */}
-          {/* <Grid item xs={6} md={4}>
-      <Item>xs=6 md=4</Item>
-    </Grid>
-    <Grid item xs={6} md={8}>
-      <Item>xs=6 md=8</Item>
-    </Grid> */}
         </Grid>
       </Box>
     </>
   );
 };
-export default HomePage;
+export default About;

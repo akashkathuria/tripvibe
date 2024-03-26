@@ -33,7 +33,7 @@ function Footer() {
   // }, [value, setMessages]);
 
   return (
-    <Box sx={{ pb: 7 }} ref={ref}>
+    <Box ref={ref}>
       <CssBaseline />
       {/* <List>
         {messages.map(({ primary, secondary, person }, index) => (
@@ -45,9 +45,9 @@ function Footer() {
           </ListItemButton>
         ))}
       </List> */}
-      <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0, maxHeight: 40 }} elevation={3}>
+      <Paper elevation={3}>
         <BottomNavigation
-          showLabels
+        sx={{backgroundColor: "var(--primary)"}}
           value={value}
           onChange={(event, newValue) => {
             setValue(newValue);
@@ -59,13 +59,13 @@ function Footer() {
             // component="a"
             // href="#app-bar-with-responsive-menu"
             sx={{
-              mt:1,
+              mt: 2,
               display: { xs: 'flex', md: 'flex' },
               // fontFamily: 'monospace',
               fontSize:{ xs: '.75rem', md: '1rem' },
               fontWeight: 700,
               letterSpacing: '.1rem',
-              color: 'inherit',
+              color: 'var(--secondary)',
               textDecoration: 'none',
             }}
           >

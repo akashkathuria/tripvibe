@@ -1,68 +1,100 @@
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
+import * as React from "react";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Toolbar from "@mui/material/Toolbar";
+import IconButton from "@mui/material/IconButton";
+import Typography from "@mui/material/Typography";
+import Menu from "@mui/material/Menu";
 // import MenuIcon from '@mui/icons-material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
-import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
-import { LOGO_URL } from  '../../constants/constant'
-const pages = ['Home', 'About', 'Blog'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+import MenuIcon from "@mui/icons-material/Menu";
+import Container from "@mui/material/Container";
+// import Avatar from "@mui/material/Avatar";
+import Button from "@mui/material/Button";
+// import Tooltip from "@mui/material/Tooltip";
+import MenuItem from "@mui/material/MenuItem";
+import AdbIcon from "@mui/icons-material/Adb";
+import { HEADLINES, LOGO_URL } from "../../constants/constant";
+import { useLocation, useNavigate } from "react-router-dom";
+import { PageMeta } from "./SeoComponents";
+import { ROUTES } from "../../constants/routes";
+import { SEO } from "../../constants/seo";
+const pages = [
+  {
+    label: "Home",
+    route: ROUTES.HOME,
+  },
+  {
+    label: "About",
+    route: ROUTES.ABOUT,
+  },
+  {
+    label: "Contact Us",
+    route: ROUTES.CONTACT,
+  },
+];
+// const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
-console.log('LOGO_URL', LOGO_URL);
 function Header() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
-
+  const navigate = useNavigate();
+  const location = useLocation();
+  const { pathname } = location;
+  const pageType = Object.keys(ROUTES).find((item) => ROUTES[item] === pathname);
+  // const [anchorElUser, setAnchorElUser] = React.useState(null);
+  React.useEffect(() => {
+    window.scrollTo(0,0)
+  }, [location]);
+  
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
+  // const handleOpenUserMenu = (event) => {
+  //   setAnchorElUser(event.currentTarget);
+  // };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
 
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
+  const redirectTo = (route) => {
+    navigate(route);
+    handleCloseNavMenu();
   };
 
+  // const handleCloseUserMenu = () => {
+  //   setAnchorElUser(null);
+  // };
+
+  const metaData = SEO[pageType];
+  console.log("metaData", metaData);
   return (
-    <AppBar position="fixed">
+    <>
+    <PageMeta meta={metaData} />
+    <AppBar sx={{backgroundColor: "var(--secondary)"}} position="fixed">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <img alt='Logo' src={LOGO_URL} width={50}/>
+          <img alt="Logo" src={LOGO_URL} width={50} />
           {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
           <Typography
             variant="h6"
             noWrap
             component="a"
-            href="#app-bar-with-responsive-menu"
+            href={ROUTES.HOME}
             sx={{
-              ml:2,
+              ml: 2,
               mr: 2,
-              display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
+              display: { xs: "none", md: "flex" },
+              fontFamily: "monospace",
               fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
+              letterSpacing: ".3rem",
+              color: "inherit",
+              textDecoration: "none",
             }}
           >
-            TRIP VIBE
+            {HEADLINES.LOGO_TEXT}
           </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -77,55 +109,64 @@ function Header() {
               id="menu-appbar"
               anchorEl={anchorElNav}
               anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
+                vertical: "bottom",
+                horizontal: "left",
               }}
               keepMounted
               transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
+                vertical: "top",
+                horizontal: "left",
               }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
               sx={{
-                display: { xs: 'block', md: 'none' },
+                display: { xs: "block", md: "none" },
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                <MenuItem
+                  key={page.label}
+                  onClick={() => redirectTo(page.route)}
+                >
+                  <Typography textAlign="center">{page.label}</Typography>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
           {/* <img alt='Logo' src="%PUBLIC_URL%/logo.png" /> */}
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
           <Typography
             variant="h5"
             noWrap
             component="a"
-            href="#app-bar-with-responsive-menu"
+            href={ROUTES.HOME}
             sx={{
               mr: 2,
-              display: { xs: 'flex', md: 'none' },
+              display: { xs: "flex", md: "none" },
               flexGrow: 1,
-              fontFamily: 'monospace',
+              fontFamily: "monospace",
               fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
+              letterSpacing: ".3rem",
+              color: "inherit",
+              textDecoration: "none",
             }}
           >
-            TRIP VIBE
+            {HEADLINES.LOGO_TEXT}
           </Typography>
-          <Box sx={{ flexGrow: 1, justifyContent:'center', display: { xs: 'none', md: 'flex' } }}>
+          <Box
+            sx={{
+              flexGrow: 1,
+              justifyContent: "center",
+              display: { xs: "none", md: "flex" },
+            }}
+          >
             {pages.map((page) => (
               <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                key={page.label}
+                onClick={() => redirectTo(page.route)}
+                sx={{ my: 2, color: "white", display: "block" }}
               >
-                {page}
+                {page.label}
               </Button>
             ))}
           </Box>
@@ -163,23 +204,24 @@ function Header() {
             variant="h6"
             noWrap
             component="a"
-            href="#app-bar-with-responsive-menu"
+            href={ROUTES.HOME}
             sx={{
-              ml:2,
+              ml: 2,
               mr: 2,
-              display: { xs: 'none', md: 'flex' },
-            //   fontFamily: 'monospace',
+              display: { xs: "none", md: "flex" },
+              //   fontFamily: 'monospace',
               fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
+              letterSpacing: ".3rem",
+              color: "inherit",
+              textDecoration: "none",
             }}
           >
-            INCREDIBLE INDIA
+            {HEADLINES.RIGHT_HEADER_TEXT}
           </Typography>
         </Toolbar>
       </Container>
     </AppBar>
+    </>
   );
 }
 export default Header;
