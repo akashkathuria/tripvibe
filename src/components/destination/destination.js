@@ -18,40 +18,48 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
+
+
 const Destination = (props) => {
-    const {content} = props;
-    console.log("props", props);
+console.log("child", props.children);
+
+  const { content, date } = props;
+  console.log("props", props);
   return (
     <>
-      <Box sx={{ flexGrow: 1, marginTop:"10px" }} >
+      <Box sx={{ flexGrow: 1, marginTop: "10px" }}>
         <Grid container spacing={2}>
-        <Grid item xs={12} md={8}>
-        <Typography
-          variant="h6"
-          noWrap
-          sx={{
-            ml: 2,
-            mr: 2,
-            display: "flex",
-            textAlign: "center",
-            whiteSpace: { xs : "break-spaces" },
-            //   fontFamily: 'monospace',
-            fontWeight: 900,
-            letterSpacing: ".3rem",
-            color: "inherit",
-            textDecoration: "none",
-          }}
-        >
-          {content.heading}
-        </Typography>
-        <Divider />
-        <Author />
-        {props.children}
-        </Grid>
-        <Grid item xs={12} md={4}>
+          <Grid item xs={12} md={8}>
+            <Typography
+              variant="h6"
+              noWrap
+              sx={{
+                ml: 2,
+                mr: 2,
+                display: "flex",
+                textAlign: "center",
+                whiteSpace: { xs: "break-spaces" },
+                //   fontFamily: 'monospace',
+                fontWeight: 900,
+                letterSpacing: ".3rem",
+                color: "inherit",
+                textDecoration: "none",
+              }}
+            >
+              {content.heading}
+            </Typography>
+            <Divider />
+            <Author date={date}/>
+            {props.children.length > 0 ? props.children[0] : props.children}
+          </Grid>
+          <Grid item xs={12} md={4}>
+            <AboutSummary showReadmore={true} />
 
-<AboutSummary showReadmore={true}/>
-        </Grid>
+            {props.children.length > 1 ?  
+            props.children.filter((item, index) => index !== 0)
+            :
+             null}
+          </Grid>
         </Grid>
       </Box>
     </>

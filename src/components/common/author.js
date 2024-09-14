@@ -1,23 +1,25 @@
 import * as React from "react";
-import { Avatar, Card, CardContent, Typography } from "@mui/material";
+import { Avatar, Box, Card, CardContent, Typography } from "@mui/material";
 
-function Author() {
+function Author({date}) {
   return (
     <Card sx={{ minWidth: 275 }}>
-      <CardContent sx={{display:"flex"}}>
-      <Avatar alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
+      <CardContent sx={{display:"flex", alignItems:"center"}}>
+      <Avatar alt="Harsha" src="/static/images/avatar/3.jpg" />
+      <Box>
+
       <Typography
           variant="caption"
-          
+          sx={{ml: 1}}
         >
           HARSHA KULSHRESTHA
         </Typography>
         <Typography
-          variant="caption"
-          
+          sx={{fontSize:"9px", ml: 1}}
         >
-          PUBLISHED ON MARCH 9, 2024
+          PUBLISHED ON {date}
         </Typography>
+      </Box>
       </CardContent>
     </Card>
   );

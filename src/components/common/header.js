@@ -31,6 +31,11 @@ const pages = [
     label: "Contact Us",
     route: ROUTES.CONTACT,
   },
+  
+  {
+    label: "Mauritius Blog",
+    route: ROUTES.MAURITIUS,
+  },
 ];
 // const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 

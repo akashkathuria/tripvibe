@@ -1,4 +1,5 @@
 import { ROUTES } from "../../constants/routes";
+import { MAURITIUS_DATA } from "../destination/mauritius/mauritiusData";
 
 export const HOME_DATA = {
     postsList: [
@@ -76,78 +77,61 @@ export const HOME_DATA = {
       ],
     pinnedList: [
         {
-          avtarImg: "https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=400&h=250&q=60",
-          avtarAlt: "Remy Sharp",
-          heading: "Brunch this weekend?",
-          subHeading: "Ali Connors",
-          description: " — I'll be in your neighborhood doing errands this…",
+          avtarImg: "https://s3.ap-south-1.amazonaws.com/tripvibe.in/assets/mauritius/mau8.jpg",
+          avtarAlt: "Mauritius",
+          heading: "Explore Mauritius with us!",
+          subHeading: "Mauritius Blog",
+          description: " — Find out more about the tropical paradise...",
           redirect: ROUTES.MAURITIUS
         },
-        {
-            avtarImg: "https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=400&h=250&q=60",
-            avtarAlt: "Remy Sharp",
-            heading: "Brunch this weekend?",
-            subHeading: "Ali Connors",
-            description: " — I'll be in your neighborhood doing errands this…",
-            redirect: ROUTES.MAURITIUS
-          },
-          {
-            avtarImg: "https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=400&h=250&q=60",
-            avtarAlt: "Remy Sharp",
-            heading: "Brunch this weekend?",
-            subHeading: "Ali Connors",
-            description: " — I'll be in your neighborhood doing errands this…",
-            redirect: ROUTES.MAURITIUS
-          },
-          {
-            avtarImg: "https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=400&h=250&q=60",
-            avtarAlt: "Remy Sharp",
-            heading: "Brunch this weekend?",
-            subHeading: "Ali Connors",
-            description: " — I'll be in your neighborhood doing errands this…",
-            redirect: ROUTES.MAURITIUS
-          },
-          {
-            avtarImg: "https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=400&h=250&q=60",
-            avtarAlt: "Remy Sharp",
-            heading: "Brunch this weekend?",
-            subHeading: "Ali Connors",
-            description: " — I'll be in your neighborhood doing errands this…",
-            redirect: ROUTES.MAURITIUS
-          },
-          {
-            avtarImg: "https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=400&h=250&q=60",
-            avtarAlt: "Remy Sharp",
-            heading: "Brunch this weekend?",
-            subHeading: "Ali Connors",
-            description: " — I'll be in your neighborhood doing errands this…",
-            redirect: ROUTES.MAURITIUS
-          },
+        // {
+        //     avtarImg: "https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=400&h=250&q=60",
+        //     avtarAlt: "Remy Sharp",
+        //     heading: "Brunch this weekend?",
+        //     subHeading: "Ali Connors",
+        //     description: " — I'll be in your neighborhood doing errands this…",
+        //     redirect: ROUTES.MAURITIUS
+        //   },
+        //   {
+        //     avtarImg: "https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=400&h=250&q=60",
+        //     avtarAlt: "Remy Sharp",
+        //     heading: "Brunch this weekend?",
+        //     subHeading: "Ali Connors",
+        //     description: " — I'll be in your neighborhood doing errands this…",
+        //     redirect: ROUTES.MAURITIUS
+        //   },
+        //   {
+        //     avtarImg: "https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=400&h=250&q=60",
+        //     avtarAlt: "Remy Sharp",
+        //     heading: "Brunch this weekend?",
+        //     subHeading: "Ali Connors",
+        //     description: " — I'll be in your neighborhood doing errands this…",
+        //     redirect: ROUTES.MAURITIUS
+        //   },
+        //   {
+        //     avtarImg: "https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=400&h=250&q=60",
+        //     avtarAlt: "Remy Sharp",
+        //     heading: "Brunch this weekend?",
+        //     subHeading: "Ali Connors",
+        //     description: " — I'll be in your neighborhood doing errands this…",
+        //     redirect: ROUTES.MAURITIUS
+        //   },
+        //   {
+        //     avtarImg: "https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=400&h=250&q=60",
+        //     avtarAlt: "Remy Sharp",
+        //     heading: "Brunch this weekend?",
+        //     subHeading: "Ali Connors",
+        //     description: " — I'll be in your neighborhood doing errands this…",
+        //     redirect: ROUTES.MAURITIUS
+        //   },
+        //   {
+        //     avtarImg: "https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=400&h=250&q=60",
+        //     avtarAlt: "Remy Sharp",
+        //     heading: "Brunch this weekend?",
+        //     subHeading: "Ali Connors",
+        //     description: " — I'll be in your neighborhood doing errands this…",
+        //     redirect: ROUTES.MAURITIUS
+        //   }
       ],
-      imageList: [
-        {
-          label: "San Francisco – Oakland Bay Bridge, United States",
-          imgPath:
-            "https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=400&h=250&q=60",
-          redirect: ROUTES.MAURITIUS
-        },
-        {
-          label: "Bird",
-          imgPath:
-            "https://images.unsplash.com/photo-1538032746644-0212e812a9e7?auto=format&fit=crop&w=400&h=250&q=60",
-            redirect: ROUTES.MAURITIUS
-        },
-        {
-          label: "Bali, Indonesia",
-          imgPath:
-            "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=400&h=250",
-            redirect: ROUTES.MAURITIUS
-        },
-        {
-          label: "Goč, Serbia",
-          imgPath:
-            "https://images.unsplash.com/photo-1512341689857-198e7e2f3ca8?auto=format&fit=crop&w=400&h=250&q=60",
-            redirect: ROUTES.MAURITIUS
-        },
-      ]
+      imageList: MAURITIUS_DATA.homeSliderImages
 }

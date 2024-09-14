@@ -53,7 +53,7 @@ const About = () => {
       </Box> */}
       
       {/* <Slider /> */}
-      <Box sx={{ flexGrow: 1, marginTop:"10px" }} >
+      <Box sx={{ flexGrow: 1, padding: '0px 16px 16px 16px'  }} >
         <Grid container spacing={2}>
         <Grid item xs={12} md={8}>
         <AboutDescription />

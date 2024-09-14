@@ -7,17 +7,17 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Avatar, Divider, List, ListItem, ListItemAvatar, ListItemText } from '@mui/material';
 import { HOME_DATA } from './HomePageData';
-
-
-
+import { useNavigate } from 'react-router-dom';
 
  const HomePinnedCard = () => {
+  const navigate = useNavigate();
+
   const pinnedList = HOME_DATA.pinnedList;
   return (
     <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
       {pinnedList.length > 0 && pinnedList.map((post) => (
         <>
-        <ListItem alignItems="flex-start">
+        <ListItem sx={{cursor:"pointer"}} alignItems="flex-start" onClick={() =>  navigate(post.redirect)}>
         <ListItemAvatar>
           <Avatar alt={post.avtarAlt} src={post.avtarImg} />
         </ListItemAvatar>

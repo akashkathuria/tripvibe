@@ -47,7 +47,7 @@ function Footer() {
       </List> */}
       <Paper elevation={3}>
         <BottomNavigation
-        sx={{backgroundColor: "var(--primary)"}}
+        sx={{backgroundColor: "white"}}
           value={value}
           onChange={(event, newValue) => {
             setValue(newValue);
