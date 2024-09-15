@@ -26,7 +26,7 @@ const MauritiusContent = () => {
       <Box sx={{ flexGrow: 1, marginTop: "10px", marginLeft: "10px" }}>
         <p>
           <span style={font14}>
-            Planning our honeymoon was exciting but also a bit of a dilemma as
+            Planning for our next vacation was a bit of a dilemma as
             we weighed up the best tropical destinations. After much
             deliberation between Bali, Maldives, and Mauritius, we finally
             settled on the paradise island of Mauritius&mdash;and it did not
@@ -574,10 +574,10 @@ const MauritiusContent = () => {
             an&nbsp;
           </span>
           <strong>
-            <span style={font14}>Ed Sheeran</span>
+            <span style={font14}>Bruno mars</span>
           </strong>
           <span style={font14}>
-            &nbsp;song, which made for a perfect, relaxing moment. After soaking
+            &nbsp;song - "Just the Way You Are", which made for a perfect, relaxing moment. After soaking
             in the music for a bit, we left Port Louis and made our way to&nbsp;
           </span>
           <strong>

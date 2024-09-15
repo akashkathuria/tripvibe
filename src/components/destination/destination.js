@@ -9,6 +9,7 @@ import { HEADLINES } from "../../constants/constant";
 import HomeSlider from "../home/HomeSlider";
 import Author from "../common/author";
 import AboutSummary from "../about/aboutSumarry";
+import { isMobile } from "react-device-detect";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -53,7 +54,7 @@ console.log("child", props.children);
             {props.children.length > 0 ? props.children[0] : props.children}
           </Grid>
           <Grid item xs={12} md={4}>
-            <AboutSummary showReadmore={true} />
+            {!isMobile && <AboutSummary showReadmore={true} />}
 
             {props.children.length > 1 ?  
             props.children.filter((item, index) => index !== 0)
