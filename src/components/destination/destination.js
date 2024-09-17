@@ -32,7 +32,7 @@ console.log("child", props.children);
         <Grid container spacing={2}>
           <Grid item xs={12} md={8}>
             <Typography
-              variant="h6"
+              variant="h1"
               noWrap
               sx={{
                 ml: 2,

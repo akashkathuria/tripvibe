@@ -5,7 +5,7 @@ export default function ImageContent ({imgPath, imgCaption}) {
     <>
       <img
         src={imgPath}
-        alt="m1"
+        alt={imgCaption}
         className="destination-image"
       />
       <small style={{ textAlign: "center", display: "block" }}>
