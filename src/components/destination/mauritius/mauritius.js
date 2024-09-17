@@ -4,7 +4,7 @@ import React from "react";
 import MauritiusContent from './mauritius.content';
 import MauritiusItenary from './mauritius.itenary';
 import HomeSlider from '../../home/HomeSlider';
-import { Divider } from '@mui/material';
+import { Box, Divider } from '@mui/material';
 
 const Mauritius = () => {
     return <>
@@ -12,7 +12,7 @@ const Mauritius = () => {
       <MauritiusContent />
       <MauritiusItenary />
       <Divider />
-      <HomeSlider heading="Mauritius Gallery"/>
+      <Box sx={{padding: "0px 10px 0px 10px"}}><HomeSlider heading="Mauritius Gallery"/></Box>
     </Destination>
     </>
 }

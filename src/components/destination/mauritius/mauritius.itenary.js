@@ -20,7 +20,7 @@ const listFontCirc = {
 const MauritiusItenary = () => {
   return (
     <>
-      <Box sx={{ flexGrow: 1, marginTop: "10px", marginLeft: "10px" }}>
+      <Box sx={{ flexGrow: 1, marginTop: "10px", marginLeft: "10px", padding: "0px 15px 0px 5px"  }}>
       <Divider />
         <p style={heading}>
           <strong>

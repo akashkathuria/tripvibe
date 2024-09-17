@@ -15,15 +15,10 @@ const listFontDisc = {
   fontSize: "11px",
 };
 
-const listFontCirc = {
-  listStyleType: "disc",
-  fontSize: "11px",
-};
-
 const MauritiusContent = () => {
   return (
     <>
-      <Box sx={{ flexGrow: 1, marginTop: "10px", marginLeft: "10px" }}>
+      <Box sx={{ flexGrow: 1, marginTop: "10px", marginLeft: "10px", padding: "0px 15px 0px 5px" }}>
         <p>
           <span style={font14}>
             Planning for our next vacation was a bit of a dilemma as

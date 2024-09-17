@@ -76,7 +76,7 @@ function HomeSlider({ heading }) {
         </div>
       )}
       <Box>
-        <Typography variant="body1" sx={{ textAlign: "left", color: "black" }}>
+        <Typography variant="body1" sx={{ textAlign: "left", color: "black", padding:"10px" }}>
           {MAURITIUS_DATA.summary}
         </Typography>
       </Box>
