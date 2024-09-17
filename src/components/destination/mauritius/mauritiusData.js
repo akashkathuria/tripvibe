@@ -1,5 +1,5 @@
 export const MAURITIUS_DATA = {
-  heading: "Mauritius",
+  heading: "Discover Mauritius: A Complete Travel Guide",
   summary: "Mauritius, a stunning island nation located in the Indian Ocean, is renowned for its pristine beaches, turquoise waters, and vibrant culture. Positioned to the east of Madagascar and southwest of the Indian subcontinent, this tropical paradise boasts a unique blend of natural beauty and cultural diversity. The island is famous for its lush landscapes, including volcanic mountains, lush forests, and white sandy beaches. The climate is tropical, with warm temperatures year-round, making it a perfect destination for beachgoers and nature enthusiasts alike.",
   summary2: "Mauritius is known for its luxury resorts, world-class golf courses, and a range of water sports. The island is also home to unique attractions such as the Seven Colored Earths, natural volcanic formations that display a spectrum of colors, and the lush SSR Botanical Garden. Additionally, the island’s coral reefs offer excellent opportunities for snorkeling and diving.",
   homeSliderImages:  [

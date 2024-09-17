@@ -31,7 +31,7 @@ function AboutSummary({ showReadmore = true }) {
       />
 
       <Typography sx={{fontWeight: 600}} variant="body1" gutterBottom>
-        Travel Enthusiast | Explorer of Incredible India | Journeying Through
+        Travel Enthusiast | Explorer of Incredible Destinations | Journeying Through
         Life with My Better Half
       </Typography>
 

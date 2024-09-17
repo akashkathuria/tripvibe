@@ -45,6 +45,8 @@ console.log("child", props.children);
                 letterSpacing: ".3rem",
                 color: "inherit",
                 textDecoration: "none",
+                fontSize:"30px",
+                fontFamily:"math"
               }}
             >
               {content.heading}
